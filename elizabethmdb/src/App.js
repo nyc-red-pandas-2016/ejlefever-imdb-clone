@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 
 import SearchForm from './components/searchform';
-import Movie from './components/movie';
+import Movies from './components/movies';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      movie: null
+      movies: []
     };
     this.updateResults = this.updateResults.bind(this);
   }
 
-  updateResults(newMovie) {
-    this.setState({movie: newMovie});
+  updateResults(newMovies) {
+    this.setState({movies: newMovies});
   }
 
   render() {
@@ -27,7 +27,7 @@ class App extends Component {
         </div>
         <p className="App-intro">search for a movie:</p>
         <SearchForm updateResults={this.updateResults}/>
-        <Movie movie={this.state.movie}/>
+        <Movies movies={this.state.movies}/>
       </div>
     );
   }
