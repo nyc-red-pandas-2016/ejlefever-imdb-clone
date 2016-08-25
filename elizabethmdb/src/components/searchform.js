@@ -18,7 +18,7 @@ export default class SearchForm extends Component {
       return response.json();
     }).then(function(json) {
       that.refs.movieTitleText.value = "";
-      that.props.updateResults(json.Search[0]);
+      that.props.updateResults(json.Search);
     });
   }
 
